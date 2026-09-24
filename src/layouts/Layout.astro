@@ -1,0 +1,129 @@
+---
+import data from '../../data/standings.json';
+
+interface Props {
+  title: string;
+  active: 'standings' | 'details';
+  wide?: boolean;
+}
+const { title, active, wide = false } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const updated = new Intl.DateTimeFormat('en-US', {
+  timeZone: 'America/New_York',
+  weekday: 'short',
+  month: 'short',
+  day: 'numeric',
+}).format(new Date(data.updatedAt));
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · Traky Wins Poll</title>
+    <meta name="description" content={`Traky Wins Poll ${data.season}: standings through Week ${data.throughWeek}.`} />
+    <link rel="icon" type="image/png" href={`${base}/logo.png`} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  </head>
+  <body class:list={{ wide }}>
+    <header class="masthead">
+      <a class="brand" href={`${base}/`}>
+        <img src={`${base}/logo.png`} alt="" width="64" height="45" />
+        <span>Traky Wins Poll <em>{data.season}</em></span>
+      </a>
+      <nav>
+        <a href={`${base}/`} aria-current={active === 'standings' ? 'page' : undefined}>Standings</a>
+        <a href={`${base}/details/`} aria-current={active === 'details' ? 'page' : undefined}>Details</a>
+      </nav>
+    </header>
+
+    <main>
+      <p class="stamp">
+        {data.throughWeek > 0 ? `Through Week ${data.throughWeek}` : 'No games completed yet'} · updated {updated}
+      </p>
+      <slot />
+    </main>
+
+    <footer>
+      1 point per regular-season win, Weeks 1–18. Cardinals and Dolphins went undrafted.
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --navy: #0a1a33;
+    --navy-2: #11274b;
+    --navy-3: #1d3a6b;
+    --royal: #2f5fe0;
+    --royal-soft: #6f95ff;
+    --red: #d7263d;
+    --white: #ffffff;
+    --muted: #a7b6d4;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--navy);
+    color: var(--white);
+    font: 15px/1.4 Inter, system-ui, sans-serif;
+  }
+  main, .masthead, footer { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+  .wide :is(main, .masthead, footer) { max-width: 1080px; }
+  .num { font-family: Oswald, Impact, sans-serif; font-variant-numeric: tabular-nums; }
+</style>
+
+<style>
+  .masthead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--red);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--white);
+    text-decoration: none;
+    font: 700 28px/1 Oswald, Impact, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .brand img {
+    width: 64px;
+    height: auto;
+    padding: 4px 6px;
+    background: var(--white);
+    border-radius: 8px;
+  }
+  .brand em { font-style: normal; color: var(--royal-soft); }
+  nav { display: flex; gap: 4px; }
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font: 500 15px/1 Oswald, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 8px 12px;
+    border-radius: 6px;
+  }
+  nav a:hover { color: var(--white); }
+  nav a[aria-current='page'] { background: var(--royal); color: var(--white); }
+  .stamp { color: var(--muted); font-size: 13px; margin: 12px 0 10px; }
+  footer { color: var(--muted); font-size: 12px; padding-top: 18px; padding-bottom: 24px; }
+
+  @media (max-width: 480px) {
+    .brand { font-size: 22px; }
+    .brand img { width: 52px; }
+  }
+</style>

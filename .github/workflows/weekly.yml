@@ -1,0 +1,67 @@
+name: Update standings and deploy
+
+on:
+  schedule:
+    # 5am ET is 09:00 UTC in EDT and 10:00 UTC in EST. Run both; the second
+    # run recomputes identical data and makes no commit.
+    - cron: '0 9 * * 2'
+    - cron: '0 10 * * 2'
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: standings
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      # Code pushes just redeploy; scheduled and manual runs refresh the data.
+      - name: Fetch results and recompute standings
+        if: github.event_name != 'push'
+        run: npm run update
+
+      - name: Commit data if changed
+        if: github.event_name != 'push'
+        run: |
+          git add data/results.json data/standings.json
+          if git diff --cached --quiet; then
+            echo "No change in data."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Standings through Week $(node -p "require('./data/standings.json').throughWeek")"
+            git push
+          fi
+
+      - run: npm run build
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

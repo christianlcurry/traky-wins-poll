@@ -1,0 +1,15 @@
+{
+  "season": 2026,
+  "drafters": [
+    { "name": "Adam",   "teams": [{ "abbr": "LAR", "label": "Rams" },     { "abbr": "NYG", "label": "Giants" },   { "abbr": "CAR", "label": "Panthers" }] },
+    { "name": "Csati",  "teams": [{ "abbr": "CHI", "label": "Bears" },    { "abbr": "JAX", "label": "Jaguars" },  { "abbr": "LV",  "label": "Raiders" }] },
+    { "name": "Curry",  "teams": [{ "abbr": "PHI", "label": "Eagles" },   { "abbr": "MIN", "label": "Vikings" },  { "abbr": "PIT", "label": "Steelers" }] },
+    { "name": "Ginter", "teams": [{ "abbr": "BAL", "label": "Ravens" },   { "abbr": "TB",  "label": "Bucs" },     { "abbr": "ATL", "label": "Falcons" }] },
+    { "name": "Groot",  "teams": [{ "abbr": "HOU", "label": "Texans" },   { "abbr": "DAL", "label": "Cowboys" },  { "abbr": "WSH", "label": "Commanders" }] },
+    { "name": "Keegan", "teams": [{ "abbr": "NE",  "label": "Patriots" }, { "abbr": "KC",  "label": "Chiefs" },   { "abbr": "IND", "label": "Colts" }] },
+    { "name": "Kojak",  "teams": [{ "abbr": "SEA", "label": "Seahawks" }, { "abbr": "LAC", "label": "Chargers" }, { "abbr": "TEN", "label": "Titans" }] },
+    { "name": "Marty",  "teams": [{ "abbr": "SF",  "label": "49ers" },    { "abbr": "CIN", "label": "Bengals" },  { "abbr": "NO",  "label": "Saints" }] },
+    { "name": "Mike",   "teams": [{ "abbr": "BUF", "label": "Bills" },    { "abbr": "GB",  "label": "Packers" },  { "abbr": "NYJ", "label": "Jets" }] },
+    { "name": "Nevin",  "teams": [{ "abbr": "DET", "label": "Lions" },    { "abbr": "DEN", "label": "Broncos" },  { "abbr": "CLE", "label": "Browns" }] }
+  ]
+}

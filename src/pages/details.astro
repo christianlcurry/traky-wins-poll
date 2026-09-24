@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+import data from '../../data/standings.json';
+
+const weeks = Array.from({ length: data.throughWeek }, (_, i) => i + 1);
+// Highest score each week; every drafter who hit it gets highlighted.
+const weekTop = weeks.map((_, i) => Math.max(0, ...data.standings.map((s) => s.byWeek[i])));
+---
+<Layout title="Details" active="details" wide>
+  {weeks.length === 0 ? (
+    <p>No completed weeks yet.</p>
+  ) : (
+    <>
+      <div class="scroller">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col" class="drafter">Drafter</th>
+              {weeks.map((w) => <th scope="col">W{w}</th>)}
+              <th scope="col" class="total">Total</th>
+              <th scope="col" class="max">Max</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.standings.map((s) => (
+              <tr class:list={{ money: s.inTheMoney }}>
+                <th scope="row" class="drafter">
+                  {s.name}{s.inTheMoney && <span class="dollar">$</span>}
+                </th>
+                {s.byWeek.map((pts, i) => (
+                  <td class:list={['num', { top: pts > 0 && pts === weekTop[i] }]}>{pts}</td>
+                ))}
+                <td class="num total">{s.total}</td>
+                <td class="num max">{s.maxPossible}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="legend">
+        Points earned that week, not running totals. <span class="swatch"></span> week's top score.
+      </p>
+    </>
+  )}
+</Layout>
+
+<style>
+  .scroller {
+    overflow-x: auto;
+    border: 1px solid var(--navy-3);
+    border-radius: 8px;
+  }
+  table { border-collapse: separate; border-spacing: 0; width: 100%; }
+  th.drafter { width: 8rem; }
+  th, td {
+    padding: 8px 7px;
+    text-align: center;
+    border-bottom: 1px solid var(--navy-3);
+    white-space: nowrap;
+  }
+  tbody tr:last-child > * { border-bottom: 0; }
+  thead th {
+    font: 500 13px/1 Oswald, sans-serif;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--navy-2);
+  }
+  td { font-size: 17px; }
+  .drafter {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    text-align: left;
+    background: var(--navy);
+    border-right: 1px solid var(--navy-3);
+    font-weight: 600;
+  }
+  thead .drafter { background: var(--navy-2); }
+  td.top { background: var(--red); font-weight: 700; }
+  .total { font-weight: 700; border-left: 1px solid var(--navy-3); }
+  td.total { font-size: 19px; }
+  td.max { color: var(--muted); }
+  .dollar {
+    margin-left: 6px;
+    padding: 0 5px;
+    border-radius: 4px;
+    background: var(--red);
+    font: 700 12px/17px Oswald, sans-serif;
+  }
+  .legend { color: var(--muted); font-size: 12.5px; margin: 10px 0 0; }
+  .swatch {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-left: 4px;
+    background: var(--red);
+    border-radius: 2px;
+  }
+</style>

@@ -1,0 +1,17 @@
+{
+  "name": "traky-wins-poll",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "update": "node scripts/update-standings.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "astro": "^7.3.5"
+  }
+}

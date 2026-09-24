@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+import data from '../../data/standings.json';
+
+const leader = Math.max(0, ...data.standings.map((s) => s.total));
+const pct = (total: number) => (leader === 0 ? 0 : (total / leader) * 100);
+---
+<Layout title="Standings" active="standings">
+  {data.moneyNote && <p class="note"><strong>$ tie:</strong> {data.moneyNote}</p>}
+
+  <ol class="board">
+    {data.standings.map((s) => (
+      <li class:list={['row', { money: s.inTheMoney }]}>
+        <div class="rank num">
+          {s.tied ? `T${s.rank}` : s.rank}
+          {s.inTheMoney && <span class="dollar" aria-label="in the money">$</span>}
+        </div>
+        <div class="name">{s.name}</div>
+        <div class="track" aria-hidden="true">
+          <div class="bar" style={`width: max(6px, ${pct(s.total)}%)`}></div>
+        </div>
+        <div class="total num">{s.total}</div>
+        <ul class="teams">
+          {s.teams.map((t) => (
+            <li>
+              <img src={t.logo} alt="" width="18" height="18" loading="lazy" />
+              {t.label} <b class="num">{t.wins}</b>
+            </li>
+          ))}
+          <li class="max">max <b class="num">{s.maxPossible}</b></li>
+        </ul>
+      </li>
+    ))}
+  </ol>
+
+  <p class="legend">
+    <span class="dollar">$</span> currently in the money (top 2, not final until Week 18) ·
+    T = tied · max = total if every remaining game is a win
+  </p>
+</Layout>
+
+<style>
+  .note {
+    margin: 0 0 12px;
+    padding: 8px 12px;
+    background: var(--navy-2);
+    border-left: 4px solid var(--red);
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  .board { list-style: none; margin: 0; padding: 0; }
+  .row {
+    display: grid;
+    grid-template-columns: 3.2rem 6rem 1fr 2.6rem;
+    grid-template-areas:
+      'rank name track total'
+      '.    .    teams teams';
+    align-items: center;
+    column-gap: 12px;
+    row-gap: 3px;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--navy-3);
+  }
+  .rank { grid-area: rank; font-size: 20px; line-height: 1; color: var(--muted); white-space: nowrap; }
+  .name { grid-area: name; font-weight: 600; font-size: 16px; }
+  .track { grid-area: track; height: 18px; }
+  .bar { height: 100%; background: var(--royal); border-radius: 0 4px 4px 0; }
+  .total { grid-area: total; font-size: 24px; line-height: 1; font-weight: 700; text-align: right; }
+  .money .rank { color: var(--white); }
+  .money .bar {
+    background: repeating-linear-gradient(135deg, var(--red) 0 10px, #e2475b 10px 20px);
+  }
+  .dollar {
+    display: inline-block;
+    margin-left: 4px;
+    padding: 0 5px;
+    border-radius: 4px;
+    background: var(--red);
+    color: var(--white);
+    font: 700 13px/18px Oswald, sans-serif;
+    vertical-align: 3px;
+  }
+
+  .teams {
+    grid-area: teams;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 14px;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  .teams li { display: flex; align-items: center; gap: 4px; }
+  .teams b { color: var(--white); font-size: 14px; }
+  .teams .max { margin-left: auto; }
+  .teams .max b { color: var(--muted); }
+  .teams img { display: block; }
+
+  .legend { color: var(--muted); font-size: 12.5px; margin: 12px 0 0; }
+  .legend .dollar { margin: 0 2px 0 0; vertical-align: 1px; }
+
+  @media (max-width: 560px) {
+    .row {
+      grid-template-columns: 2.8rem 1fr auto;
+      grid-template-areas:
+        'rank name  total'
+        'rank track track'
+        'rank teams teams';
+      align-items: start;
+      column-gap: 8px;
+    }
+    .rank { font-size: 18px; padding-top: 2px; }
+    .rank .dollar { display: block; width: fit-content; margin: 4px 0 0; }
+    .total { font-size: 22px; line-height: 1.1; }
+    .track { height: 16px; }
+    .teams .max { margin-left: 0; }
+  }
+</style>
