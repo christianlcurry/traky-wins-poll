@@ -2,10 +2,11 @@ name: Update standings and deploy
 
 on:
   schedule:
-    # 5am ET is 09:00 UTC in EDT and 10:00 UTC in EST. Run both; the second
-    # run recomputes identical data and makes no commit.
-    - cron: '0 9 * * 2'
-    - cron: '0 10 * * 2'
+    # Hourly at :17 from 09:17 to 14:17 UTC on Tuesdays (5:17-10:17am EDT,
+    # 4:17-9:17am EST). GitHub drops scheduled runs under load, especially
+    # on the hour, so the later runs are backups. Once the data is current,
+    # a run recomputes identical output and makes no commit.
+    - cron: '17 9-14 * * 2'
   workflow_dispatch:
   push:
     branches: [main]
