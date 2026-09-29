@@ -1,147 +1,147 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-24T19:19:15Z",
-  "throughWeek": 2,
-  "moneyNote": "Curry, Marty are tied for 1st. Who takes 1st vs 2nd is unresolved.",
+  "updatedAt": "2026-09-29T12:06:19Z",
+  "throughWeek": 3,
+  "moneyNote": "Csati, Curry are tied for 1st. Who takes 1st vs 2nd is unresolved.",
   "standings": [
     {
       "rank": 1,
-      "name": "Curry",
-      "total": 5,
-      "maxPossible": 50,
+      "name": "Csati",
+      "total": 7,
+      "maxPossible": 49,
       "inTheMoney": true,
       "tied": true,
-      "byWeek": [3, 2],
+      "byWeek": [3, 1, 3],
       "teams": [
-        { "abbr": "PHI", "label": "Eagles", "wins": 2, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" },
-        { "abbr": "MIN", "label": "Vikings", "wins": 2, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/min.png" },
-        { "abbr": "PIT", "label": "Steelers", "wins": 1, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png" }
+        { "abbr": "CHI", "label": "Bears", "wins": 2, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" },
+        { "abbr": "JAX", "label": "Jaguars", "wins": 2, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png" },
+        { "abbr": "LV", "label": "Raiders", "wins": 3, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lv.png" }
       ]
     },
     {
       "rank": 1,
-      "name": "Marty",
-      "total": 5,
-      "maxPossible": 50,
+      "name": "Curry",
+      "total": 7,
+      "maxPossible": 49,
       "inTheMoney": true,
       "tied": true,
-      "byWeek": [2, 3],
+      "byWeek": [3, 2, 2],
       "teams": [
-        { "abbr": "SF", "label": "49ers", "wins": 2, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png" },
+        { "abbr": "PHI", "label": "Eagles", "wins": 2, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" },
+        { "abbr": "MIN", "label": "Vikings", "wins": 3, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/min.png" },
+        { "abbr": "PIT", "label": "Steelers", "wins": 2, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png" }
+      ]
+    },
+    {
+      "rank": 3,
+      "name": "Marty",
+      "total": 6,
+      "maxPossible": 48,
+      "inTheMoney": false,
+      "tied": true,
+      "byWeek": [2, 3, 1],
+      "teams": [
+        { "abbr": "SF", "label": "49ers", "wins": 3, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png" },
         { "abbr": "CIN", "label": "Bengals", "wins": 2, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" },
         { "abbr": "NO", "label": "Saints", "wins": 1, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png" }
       ]
     },
     {
       "rank": 3,
-      "name": "Csati",
-      "total": 4,
-      "maxPossible": 49,
-      "inTheMoney": false,
-      "tied": true,
-      "byWeek": [3, 1],
-      "teams": [
-        { "abbr": "CHI", "label": "Bears", "wins": 1, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" },
-        { "abbr": "JAX", "label": "Jaguars", "wins": 1, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png" },
-        { "abbr": "LV", "label": "Raiders", "wins": 2, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lv.png" }
-      ]
-    },
-    {
-      "rank": 3,
-      "name": "Mike",
-      "total": 4,
-      "maxPossible": 49,
-      "inTheMoney": false,
-      "tied": true,
-      "byWeek": [2, 2],
-      "teams": [
-        { "abbr": "BUF", "label": "Bills", "wins": 2, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png" },
-        { "abbr": "GB", "label": "Packers", "wins": 1, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" },
-        { "abbr": "NYJ", "label": "Jets", "wins": 1, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" }
-      ]
-    },
-    {
-      "rank": 5,
-      "name": "Adam",
-      "total": 3,
+      "name": "Nevin",
+      "total": 6,
       "maxPossible": 48,
       "inTheMoney": false,
       "tied": true,
-      "byWeek": [1, 2],
+      "byWeek": [1, 2, 3],
       "teams": [
-        { "abbr": "LAR", "label": "Rams", "wins": 1, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" },
-        { "abbr": "NYG", "label": "Giants", "wins": 1, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png" },
-        { "abbr": "CAR", "label": "Panthers", "wins": 1, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/car.png" }
+        { "abbr": "DET", "label": "Lions", "wins": 2, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png" },
+        { "abbr": "DEN", "label": "Broncos", "wins": 2, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/den.png" },
+        { "abbr": "CLE", "label": "Browns", "wins": 2, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" }
       ]
     },
     {
       "rank": 5,
       "name": "Keegan",
-      "total": 3,
-      "maxPossible": 48,
+      "total": 5,
+      "maxPossible": 47,
       "inTheMoney": false,
       "tied": true,
-      "byWeek": [1, 2],
+      "byWeek": [1, 2, 2],
       "teams": [
         { "abbr": "NE", "label": "Patriots", "wins": 1, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" },
-        { "abbr": "KC", "label": "Chiefs", "wins": 2, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" },
-        { "abbr": "IND", "label": "Colts", "wins": 0, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" }
+        { "abbr": "KC", "label": "Chiefs", "wins": 3, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" },
+        { "abbr": "IND", "label": "Colts", "wins": 1, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" }
       ]
     },
     {
       "rank": 5,
-      "name": "Nevin",
-      "total": 3,
-      "maxPossible": 48,
+      "name": "Mike",
+      "total": 5,
+      "maxPossible": 47,
       "inTheMoney": false,
       "tied": true,
-      "byWeek": [1, 2],
+      "byWeek": [2, 2, 1],
       "teams": [
-        { "abbr": "DET", "label": "Lions", "wins": 1, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png" },
-        { "abbr": "DEN", "label": "Broncos", "wins": 1, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/den.png" },
-        { "abbr": "CLE", "label": "Browns", "wins": 1, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" }
+        { "abbr": "BUF", "label": "Bills", "wins": 3, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png" },
+        { "abbr": "GB", "label": "Packers", "wins": 1, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" },
+        { "abbr": "NYJ", "label": "Jets", "wins": 1, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" }
+      ]
+    },
+    {
+      "rank": 7,
+      "name": "Adam",
+      "total": 4,
+      "maxPossible": 46,
+      "inTheMoney": false,
+      "tied": false,
+      "byWeek": [1, 2, 1],
+      "teams": [
+        { "abbr": "LAR", "label": "Rams", "wins": 1, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" },
+        { "abbr": "NYG", "label": "Giants", "wins": 2, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png" },
+        { "abbr": "CAR", "label": "Panthers", "wins": 1, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/car.png" }
       ]
     },
     {
       "rank": 8,
-      "name": "Kojak",
-      "total": 2,
-      "maxPossible": 47,
+      "name": "Ginter",
+      "total": 3,
+      "maxPossible": 45,
       "inTheMoney": false,
       "tied": false,
-      "byWeek": [1, 1],
+      "byWeek": [1, 0, 2],
       "teams": [
-        { "abbr": "SEA", "label": "Seahawks", "wins": 2, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" },
-        { "abbr": "LAC", "label": "Chargers", "wins": 0, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lac.png" },
-        { "abbr": "TEN", "label": "Titans", "wins": 0, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" }
-      ]
-    },
-    {
-      "rank": 9,
-      "name": "Ginter",
-      "total": 1,
-      "maxPossible": 46,
-      "inTheMoney": false,
-      "tied": true,
-      "byWeek": [1, 0],
-      "teams": [
-        { "abbr": "BAL", "label": "Ravens", "wins": 1, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" },
+        { "abbr": "BAL", "label": "Ravens", "wins": 2, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" },
         { "abbr": "TB", "label": "Bucs", "wins": 0, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/tb.png" },
-        { "abbr": "ATL", "label": "Falcons", "wins": 0, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" }
+        { "abbr": "ATL", "label": "Falcons", "wins": 1, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" }
       ]
     },
     {
       "rank": 9,
       "name": "Groot",
-      "total": 1,
-      "maxPossible": 46,
+      "total": 2,
+      "maxPossible": 44,
       "inTheMoney": false,
       "tied": true,
-      "byWeek": [0, 1],
+      "byWeek": [0, 1, 1],
       "teams": [
         { "abbr": "HOU", "label": "Texans", "wins": 0, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png" },
         { "abbr": "DAL", "label": "Cowboys", "wins": 1, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" },
-        { "abbr": "WSH", "label": "Commanders", "wins": 0, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png" }
+        { "abbr": "WSH", "label": "Commanders", "wins": 1, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png" }
+      ]
+    },
+    {
+      "rank": 9,
+      "name": "Kojak",
+      "total": 2,
+      "maxPossible": 44,
+      "inTheMoney": false,
+      "tied": true,
+      "byWeek": [1, 1, 0],
+      "teams": [
+        { "abbr": "SEA", "label": "Seahawks", "wins": 2, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" },
+        { "abbr": "LAC", "label": "Chargers", "wins": 0, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lac.png" },
+        { "abbr": "TEN", "label": "Titans", "wins": 0, "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" }
       ]
     }
   ]
