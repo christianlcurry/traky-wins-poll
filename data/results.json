@@ -1,8 +1,8 @@
 {
   "season": 2026,
-  "fetchedAt": "2026-10-27T11:39:05Z",
+  "fetchedAt": "2026-11-03T11:26:17Z",
   "source": "espn",
-  "lastCompletedWeek": 7,
+  "lastCompletedWeek": 8,
   "games": [
     { "week": 1, "gameId": "401872656", "away": "NE", "home": "SEA", "awayScore": 10, "homeScore": 13, "winner": "SEA", "loser": "NE", "tie": false },
     { "week": 1, "gameId": "401872657", "away": "SF", "home": "LAR", "awayScore": 27, "homeScore": 7, "winner": "SF", "loser": "LAR", "tie": false },
@@ -110,6 +110,20 @@
     { "week": 7, "gameId": "401873019", "away": "DEN", "home": "ARI", "awayScore": 30, "homeScore": 16, "winner": "DEN", "loser": "ARI", "tie": false },
     { "week": 7, "gameId": "401873020", "away": "GB", "home": "DET", "awayScore": 17, "homeScore": 20, "winner": "DET", "loser": "GB", "tie": false },
     { "week": 7, "gameId": "401873021", "away": "LAR", "home": "LV", "awayScore": 35, "homeScore": 21, "winner": "LAR", "loser": "LV", "tie": false },
-    { "week": 7, "gameId": "401873022", "away": "KC", "home": "SEA", "awayScore": 3, "homeScore": 20, "winner": "SEA", "loser": "KC", "tie": false }
+    { "week": 7, "gameId": "401873022", "away": "KC", "home": "SEA", "awayScore": 3, "homeScore": 20, "winner": "SEA", "loser": "KC", "tie": false },
+    { "week": 8, "gameId": "401873023", "away": "CAR", "home": "GB", "awayScore": 19, "homeScore": 27, "winner": "GB", "loser": "CAR", "tie": false },
+    { "week": 8, "gameId": "401873024", "away": "ARI", "home": "DAL", "awayScore": 33, "homeScore": 30, "winner": "ARI", "loser": "DAL", "tie": false },
+    { "week": 8, "gameId": "401873025", "away": "ATL", "home": "TB", "awayScore": 0, "homeScore": 16, "winner": "TB", "loser": "ATL", "tie": false },
+    { "week": 8, "gameId": "401873026", "away": "BAL", "home": "BUF", "awayScore": 10, "homeScore": 36, "winner": "BUF", "loser": "BAL", "tie": false },
+    { "week": 8, "gameId": "401873027", "away": "CLE", "home": "PIT", "awayScore": 6, "homeScore": 27, "winner": "PIT", "loser": "CLE", "tie": false },
+    { "week": 8, "gameId": "401873028", "away": "IND", "home": "JAX", "awayScore": 7, "homeScore": 42, "winner": "JAX", "loser": "IND", "tie": false },
+    { "week": 8, "gameId": "401873029", "away": "LV", "home": "NYJ", "awayScore": 38, "homeScore": 33, "winner": "LV", "loser": "NYJ", "tie": false },
+    { "week": 8, "gameId": "401873030", "away": "MIN", "home": "DET", "awayScore": 15, "homeScore": 19, "winner": "DET", "loser": "MIN", "tie": false },
+    { "week": 8, "gameId": "401873031", "away": "TEN", "home": "CIN", "awayScore": 36, "homeScore": 43, "winner": "CIN", "loser": "TEN", "tie": false },
+    { "week": 8, "gameId": "401873032", "away": "LAC", "home": "LAR", "awayScore": 9, "homeScore": 24, "winner": "LAR", "loser": "LAC", "tie": false },
+    { "week": 8, "gameId": "401873033", "away": "KC", "home": "DEN", "awayScore": 24, "homeScore": 28, "winner": "DEN", "loser": "KC", "tie": false },
+    { "week": 8, "gameId": "401873034", "away": "NE", "home": "MIA", "awayScore": 24, "homeScore": 19, "winner": "NE", "loser": "MIA", "tie": false },
+    { "week": 8, "gameId": "401873035", "away": "PHI", "home": "WSH", "awayScore": 10, "homeScore": 27, "winner": "WSH", "loser": "PHI", "tie": false },
+    { "week": 8, "gameId": "401873036", "away": "CHI", "home": "SEA", "awayScore": 34, "homeScore": 17, "winner": "CHI", "loser": "SEA", "tie": false }
   ]
 }
